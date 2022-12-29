@@ -1,0 +1,114 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row">
+                <div class="col-lg-6  mt-3">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="card mb-3" style="border:none;">
+                                <img src="<%= daangn.image %>" class="card-img-top rounded" alt="..."
+                                    style="width:100%; height:50vh; object-fit:cover;">
+                                <div class="mt-3 mb-3">
+                                    <div>
+                                        <div class="d-flex">
+                                            <div>
+                                                <img style="width: 40px; height: 40px; border-radius: 50%"
+                                                    src="https://d1unjqcospf8gs.cloudfront.net/assets/users/default_profile_80-c649f052a34ebc4eee35048815d8e4f73061bf74552558bb70e07133f25524f9.png">
+                                            </div>
+                                            <div>
+                                                <div class="ms-2" style="font-size:15px; font-weight:600">
+                                                    <%= daangn.author.username %>
+                                                </div>
+                                                <div class="ms-2" style="font-size:13px;">
+                                                    <%= daangn.location %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ul class="list-group list-group-flush" style="border-top: solid thin #e0e2e0;">
+                                    <li class="list-group-item px-0">
+                                        <div class="mt-4 mb-1" style="font-size:20px; font-weight:600;">
+                                            <%= daangn.title %>
+                                        </div>
+                                        <div class="mb-4" style="font-size:18px; font-weight:700">
+                                            <%= daangn.price %>원
+                                        </div>
+                                        <div class="mb-2">
+                                            <%= daangn.description %>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <div class="pt-4" style="border-top: solid thin #e0e2e0;">
+                                <% if(currentUser && daangn.author.equals(currentUser._id)) {%>
+
+                                    <a class="btn btn-info ms-0 me-2" href="/daangns/<%= daangn._id %>/edit">수정하기</a>
+                                    <form class="d-inline" action="/daangns/<%= daangn._id %>?_method=DELETE"
+                                        method="POST">
+                                        <button class="btn btn-danger">삭제하기</button>
+                                    </form>
+
+                                    <% }%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <% if(currentUser) {%>
+                                <h3 class="mt-5 mt-lg-3 mb-0" style="font-weight:550">댓글</h3>
+                                <form action="/daangns/<%=daangn._id%>/comments" method="POST" class="validated-form"
+                                    novalidate>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="body"></label>
+                                        <textarea class="form-control" name="comment[body]" id="body" cols="30" rows="3"
+                                            required></textarea>
+                                        <div class="invalid-feedback">댓글을 입력해주세요.</div>
+                                    </div>
+                                    <button class="btn btn-success mb-3">완료</button>
+                                </form>
+                                <% }%>
+                                    <% for(let comment of daangn.comments) { %>
+
+                                        <div class="card mb-3 mt-3">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">
+                                                    <%=comment.author.username%>
+                                                </h6>
+                                                <p>
+                                                    <%= comment.body %>
+                                                </p>
+                                                <% if(currentUser && comment.author.equals(currentUser._id)) {%>
+
+                                                    <form
+                                                        action="/daangns/<%= daangn._id %>/comments/<%= comment._id %>?_method=DELETE"
+                                                        method="POST">
+                                                        <button class="btn btn-sm btn-danger">삭제</button>
+                                                    </form>
+
+                                                    <% }%>
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>

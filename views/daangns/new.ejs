@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate')%>
+    <form action="/daangns" method="POST">
+        <div class="row">
+            <h1 class="text-center mb-4" style="font-size:32px; font-weight:550;">중고거래 글쓰기</h1>
+            <div class="col-lg-6 offset-lg-3">
+                <form action="/daangns" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" for="image">이미지 파일</label>
+                        <input class="form-control" type="text" id="image" name="daangn[image]" required>
+                        <div class="invalid-feedback">이미지를 첨부해주세요.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="title">제목</label>
+                        <input class="form-control" type="text" id="title" name="daangn[title]" required>
+                        <div class="invalid-feedback">제목을 입력해주세요.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="price">가격</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="price-label">\</span>
+                            <input type="text" class="form-control" placeholder="0" aria-label="price"
+                                aria-describedby="price-label" name="daangn[price]" required>
+                            <div class="invalid-feedback">가격을 입력해주세요.</div>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="description">내용</label>
+                        <textarea class="form-control" type="text" id="description" name="daangn[description]"
+                            required></textarea>
+                        <div class="invalid-feedback">내용을 입력해주세요.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="location">거래 희망 장소</label>
+                        <input class="form-control" type="text" id="location" name="daangn[location]" required>
+                        <div class="invalid-feedback">거래 희망 장소를 입력해주세요.</div>
+                    </div>
+
+
+                </form>
+                <div class="mb-3 mt-4">
+                    <button class="btn" style="background-color: #FF8B3D;">완료</button>
+                </div>
+                <a href="/daangns">돌아가기</a>
+            </div>
+        </div>

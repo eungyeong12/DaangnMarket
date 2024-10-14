@@ -5,14 +5,11 @@
 - 회원가입, 로그인, 게시글 및 댓글 등록, 조회, 수정, 삭제 기능을 제공합니다. 
  
 ### 스크린샷
-![image01](https://github.com/user-attachments/assets/a06901f8-1024-45ad-b662-8e8f2e8e3b8e)
-![image02](https://github.com/user-attachments/assets/ea231ced-7660-4a04-b1e6-fffb05514340)
-![image03](https://github.com/user-attachments/assets/9a059c70-35b3-4d03-8972-332afee9c495)
-![image04](https://github.com/user-attachments/assets/bee9fe7d-f9c0-4739-9f79-70fec57ac770)
-![image05](https://github.com/user-attachments/assets/70450a1c-10cd-42a2-a0c0-475c780b8631)
-![image06](https://github.com/user-attachments/assets/6a3920cb-5cba-4fc6-a744-b81054e15643)
-![image07](https://github.com/user-attachments/assets/3d7df547-38b1-4fbf-8a7a-dca0c7c5faad)
-![image08](https://github.com/user-attachments/assets/24f594ad-3c3b-4e59-824f-8d3b5640ef1f)
+![image01](https://github.com/user-attachments/assets/db7fd309-c5c2-476b-921a-7f64f0b23133)
+![image02](https://github.com/user-attachments/assets/92a36a3f-fd0d-404a-ae60-f0c5d73c82e0)
+![image03](https://github.com/user-attachments/assets/e0e1005e-b1c9-4716-b95f-127e0be06a49)
+![image04](https://github.com/user-attachments/assets/28ce05a9-9740-497d-b485-563cd2ee215c)
+![image05](https://github.com/user-attachments/assets/4e7392a0-464e-4f1f-8026-58636ffe1b98)
 
 ### 개발 기간
 22.10.01 ~ 22.12.30
